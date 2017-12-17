@@ -47,7 +47,6 @@ class PasteBinApi:
             return(None)
 
     def trends(self):
-
         try:
             paste_vars = {
                 'api_option'  : 'trends',
@@ -62,7 +61,6 @@ class PasteBinApi:
             return(None)
 
     def list_pastes(self, user_key=None, limit=50):
-
         try:
             paste_vars = {
                 'api_option'        : 'list',
