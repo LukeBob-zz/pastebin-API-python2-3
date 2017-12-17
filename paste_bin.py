@@ -1,3 +1,23 @@
+# Author: LukeBob
+#
+# Example, 
+#
+# api = PasteBinApi("<your pastebin api dev key>")
+#
+# user_key = api.user_key(username="my_username", password="mypassword")
+#
+# paste_link = api.paste(user_key,
+#                        title='new title',
+#                        raw_code="code to paste to pastebin",
+#                        private='0',                             // 0 = Public // 1 = Unlisted // 2 = Private // 
+#                        api_paste_format=None,                   // check out the available formats @ https://pastebin.com/api#2
+#                        expire_date=None                         // check out expiration date formats @ https://pastebin.com/api#2
+#                       )
+#
+#
+# Etc...
+
+
 import requests
 
 class PasteBinApi:
