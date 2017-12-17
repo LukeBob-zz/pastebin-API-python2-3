@@ -12,7 +12,6 @@ class PasteBinApi:
         self.dev_key         = dev_key
   
     def user_key(self, username, password):
-
         try:
             paste_vars = {
                 'api_dev_key'       : self.dev_key,
@@ -27,8 +26,7 @@ class PasteBinApi:
             raise
             return(None)
 
-    def paste(self, user_key, title='Untitled', raw_code=None, private='0', api_paste_format=None, expire_date=None):
-
+    def paste(self, user_key, title='Untitled', raw_code=None, private=None, api_paste_format=None, expire_date=None):
         try:
             paste_vars = {
                 'api_option'       : 'paste',
@@ -74,6 +72,7 @@ class PasteBinApi:
             }
             req = requests.post(self.api_url, data=paste_vars)
             return(req.text)
+        
         except:
             raise
             return(None)
@@ -88,6 +87,7 @@ class PasteBinApi:
             }
             req = requests.post(self.raw_url, data=paste_vars)
             return(req.text)
+        
         except:
             raise
             return(None)
@@ -115,6 +115,7 @@ class PasteBinApi:
             }
             req = requests.post(self.api_url, data=paste_vars)
             return(req.text)
+        
         except:
             raise
             return(None)
