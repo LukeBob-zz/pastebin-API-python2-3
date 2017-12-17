@@ -8,7 +8,7 @@ A Class for using the pastebin API in python 2 and 3.
     > api        = PasteBinApi(dev_key="my secret api dev key")                       # Create api object
     > user_key   = api.user_key(username="my username", password="my password ")      # Create user key
     > link       = api.paste(user_key,                                               
-                             title="my title2,
+                             title="my title",
                              raw_code="my code",
                              private=None,                                            # Returns link to new paste  
                              api_paste_format=None,
