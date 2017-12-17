@@ -106,7 +106,7 @@ class PasteBinApi:
             return(None)
 
 
-    def delete_paste(self, user_key, key):
+    def delete_paste(self, user_key, paste_key):
         try:
             paste_vars = {
                 'api_option'       : 'delete',
