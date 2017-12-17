@@ -10,7 +10,7 @@ class PasteBinApi:
         self.login_url       = self.url+"api_login.php"
         self.raw_url         = self.url+"api_raw.php"
         self.dev_key         = dev_key
-
+  
     def user_key(self, username, password):
 
         try:
@@ -104,7 +104,6 @@ class PasteBinApi:
         except:
             raise
             return(None)
-
 
     def delete_paste(self, user_key, paste_key):
         try:
