@@ -11,7 +11,7 @@ class PasteBinApi:
         self.raw_url         = self.url+"api_raw.php"
         self.dev_key         = dev_key
   
-    def user_key(self, username, password):
+    def user_key(self, username=None, password=None):
         try:
             paste_vars = {
                 'api_dev_key'       : self.dev_key,
@@ -105,7 +105,7 @@ class PasteBinApi:
             raise
             return(None)
 
-    def delete_paste(self, user_key, paste_key):
+    def delete_paste(self, user_key=None, paste_key=None):
         try:
             paste_vars = {
                 'api_option'       : 'delete',
