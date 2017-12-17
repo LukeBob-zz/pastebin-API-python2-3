@@ -1,3 +1,7 @@
+[![Packagist](https://img.shields.io/badge/language-python3.5-brightgreen.svg)]()  [![Packagist](https://img.shields.io/badge/platform-win--64%20%7C%20linux--64%20-lightgrey.svg)]()  [![DUB](https://img.shields.io/dub/l/vibe-d.svg)]()
+
+
+
 # pastebin-API-python2-3
 A Class for using the pastebin API in python 2 and 3.
 
