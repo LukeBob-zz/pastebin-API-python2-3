@@ -5,7 +5,7 @@
 # pastebin-API-python2-3
 A Class for using the pastebin API in python 2 and 3.
 
-# Example
+# Usage
 
     > from paste_bin import PasteBinApi
     >
@@ -24,7 +24,7 @@ A Class for using the pastebin API in python 2 and 3.
     > user_info     = api.user_info(user_key=user_key)                                # Returns user info for user
     > delete_paste  = api.delete_paste(user_key=user_key, paste_key="Paste key")      # Deletes a paste
 
-# Another Example
+# Example
     
     ##########################################
     # Simple Pastebin Email:Password Scraper #
