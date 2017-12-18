@@ -46,7 +46,7 @@ A Class for using the pastebin API in python 2 and 3.
     print("[*] Scraping pastebin...\n")
 
     for key in paste_key:
-         r   = requests.get("https://pastebin.com/raw/{0}".format(key))
+        r   = requests.get("https://pastebin.com/raw/{0}".format(key))
         data = r.text
         for line in data.split('\n'):
             if re.match("[\w.]+@[\w.]+:+", line):
