@@ -26,7 +26,9 @@ A Class for using the pastebin API in python 2 and 3.
 
 # Another Example
     
-    # Simple Pastebin Email:Password Scraper
+    ##########################################
+    # Simple Pastebin Email:Password Scraper #
+    ##########################################
     
     from paste_bin import PasteBinApi
     import argparse
