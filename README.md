@@ -26,37 +26,36 @@ A Class for using the pastebin API in python 2 and 3.
 
 # Example
     
+.. code-block:: python
     
-    .. code-block:: python
-    
-        ##########################################
-          Simple Pastebin Email:Password Scraper 
-        ##########################################
-    
-        from paste_bin import PasteBinApi
-        import argparse
-        import re
-        import requests
+    ##########################################
+      Simple Pastebin Email:Password Scraper 
+    ##########################################
+  
+    from paste_bin import PasteBinApi
+    import argparse
+    import re
+    import requests
 
-        api_dev_key = ""
+    api_dev_key = ""
 
-        email_list = []
+    email_list = []
 
-        api = PasteBinApi(api_dev_key)
-        trends = api.trends()
-        paste_key  = re.findall("\<paste\_key\>(.{1,50})\<", trends)
+    api = PasteBinApi(api_dev_key)
+    trends = api.trends()
+    paste_key  = re.findall("\<paste\_key\>(.{1,50})\<", trends)
 
-        print("[*] Scraping pastebin...\n")
+    print("[*] Scraping pastebin...\n")
 
-        for key in paste_key:
-            r   = requests.get("https://pastebin.com/raw/{0}".format(key))
-            data = r.text
-            for line in data.split('\n'):
-                if re.match("[\w.]+@[\w.]+:+", line):
-                    email_list.append(line)
+    for key in paste_key:
+        r   = requests.get("https://pastebin.com/raw/{0}".format(key))
+        data = r.text
+        for line in data.split('\n'):
+            if re.match("[\w.]+@[\w.]+:+", line):
+                email_list.append(line)
 
-        with open("email_dump.txt", "w")as f:
-            for email in email_list:
-                f.write(email+"\n")
+    with open("email_dump.txt", "w")as f:
+        for email in email_list:
+            f.write(email+"\n")
 
-        print("[*] Wrote {} Emails and Passwords to email_dump.txt".format(str(len(email_list))))
+    print("[*] Wrote {} Emails and Passwords to email_dump.txt".format(str(len(email_list))))
