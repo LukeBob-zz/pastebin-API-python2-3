@@ -26,7 +26,6 @@ A Class for using the pastebin API in python 2 and 3.
 
 # Example
     
-.. code-block:: python
     
     ##########################################
       Simple Pastebin Email:Password Scraper 
