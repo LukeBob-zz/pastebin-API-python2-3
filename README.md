@@ -30,9 +30,10 @@ A Class for using the pastebin API in python 2 and 3.
     ##########################################
       Simple Pastebin Email:Password Scraper 
     ##########################################
-  
+    
+    #!/usr/bin/python3
+    
     from paste_bin import PasteBinApi
-    import argparse
     import re
     import requests
 
@@ -49,12 +50,9 @@ A Class for using the pastebin API in python 2 and 3.
     for key in paste_key:
         r   = requests.get("https://pastebin.com/raw/{0}".format(key))
         data = r.text
-        for line in data.split('\n'):
-            if re.match("[\w.]+@[\w.]+:+", line):
-                email_list.append(line)
-
-    with open("email_dump.txt", "w")as f:
-        for email in email_list:
-            f.write(email+"\n")
-
+        with open("email_dump.txt", "w")as f:
+            for line in data.split('\n'):
+                if re.match("[\w.]+@[\w.]+:+", line):
+                    f.write(line+"\n")
+                    
     print("[*] Wrote {} Emails and Passwords to email_dump.txt".format(str(len(email_list))))
