@@ -50,9 +50,12 @@ A Class for using the pastebin API in python 2 and 3.
     for key in paste_key:
         r   = requests.get("https://pastebin.com/raw/{0}".format(key))
         data = r.text
-        with open("email_dump.txt", "w")as f:
-            for line in data.split('\n'):
-                if re.match("[\w.]+@[\w.]+:+", line):
-                    f.write(line+"\n")
+        for line in data.split('\n'):
+            if re.match("[\w.]+@[\w.]+:+", line):
+                email_list.append(line)
+
+    with open("email_dump.txt", "w")as f:
+        for email in email_list:
+            f.write(email+"\n")
                     
     print("[*] Wrote {} Emails and Passwords to email_dump.txt".format(str(len(email_list))))
